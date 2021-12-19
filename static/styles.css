@@ -1,6 +1,7 @@
 body
 {
-     background-color:#C84B31
+     /*background-color:#C84B31*/
+     background-color:#292C6D
 }
 
 h1
@@ -10,7 +11,14 @@ h1
 }
 .main
 {
+color:#FBFFE2;
+font: italic small-caps  16px/2 cursive;
+font-size: 3em;
 
+}
+.main2
+{
+color:#FBFFE2;
 }
 
 
