@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>CurrentCryptoCurrency</title>
+    <link rel="icon" href="static/favicon.ico">
+	<link rel="stylesheet" href="static/styles.css"
+</head>
+<body>
+
+      <form action="{{url_for('receive_data')}}" method="post">
+		<label for="name">Search for your Coin:</label>
+	     <input type="text" id="name" name="coin" size="50">
+
+	</form>
+     <h1>Your coin is {{coin}}</h1>
+
+</body>
+</html>

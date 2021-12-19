@@ -1,0 +1,156 @@
+body
+{
+     background-color:#C84B31
+}
+
+h1
+{
+   font-size: 3.0em;
+
+}
+.main
+{
+
+}
+
+
+.button {
+    float:right;
+    border: 10;
+    line-height: 2.5;
+
+    font-size: 1rem;
+    text-align: center;
+    color: #406882;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: #FF5677;
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+.button:hover {
+    background-color: #F0ECE3;
+}
+
+.button:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,label {
+    margin: .4rem 0;
+}
+
+.mainCard_Section {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	place-items: center;
+}
+.card_Container {
+	width: 100%;
+	max-width: 90%;
+	min-width: 300px;
+	height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	overflow-x: hidden;
+	padding: 20px;
+}
+.card {
+	width: 100%;
+	max-width: 350px;
+	min-width: 300px;
+	height: 550px;
+	background-color: #f6f6f6;
+	position: relative;
+	padding: 10px;
+	border-radius: 8px;
+	margin: 25px 0;
+	z-index: 2;
+}
+.card::before {
+	content: '';
+	width: 50px;
+	height: 50px;
+	background-color: #FF1700;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-bottom-left-radius: 100%;
+	border-bottom-left-radius: 100%;
+	transition: all 0.8s ease;
+	z-index: 0;
+}
+
+.card:hover.card::before {
+	width: 55%;
+	height: 55%;
+	z-index: -1;
+}
+/*
+.card_Title {
+	height: 260px;
+	display: grid;
+	place-items: center;
+}
+.card_Title h1 {
+	font-size: 1.7rem;
+	font-weight: 600;
+	color: #05192d;
+}
+.card_Details {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-direction: column;
+	height: 180px;
+}
+.card_More {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 10px;
+	height: fit-content;
+}
+.card_Edu p {
+	font-size: 0.9rem;
+	letter-spacing: 1px;
+	font-weight: 500;
+	color: #3f3d56;
+	line-height: 1.5rem;
+}
+.card_More h3 {
+	font-size: 1.2rem;
+	font-weight: 600;
+	cursor: pointer;
+}
+.card_More img {
+	width: 10px;
+	transition: all 0.6s ease;
+}
+.card_More:hover img {
+	transform: translateX(8px);
+}*/
+
+.card #card_Avatar {
+	position: absolute;
+	width: 80px;
+	object-fit: contain;
+	top: -20px;
+	left: 30px;
+}
+
