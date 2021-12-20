@@ -1,7 +1,6 @@
 body
 {
-     /*background-color:#C84B31*/
-     background-color:#292C6D
+     background-color:#396EB0
 }
 
 h1
@@ -32,7 +31,7 @@ color:#FBFFE2;
     color: #406882;
     text-shadow: 1px 1px 1px #000;
     border-radius: 10px;
-    background-color: #FF5677;
+    background-color: #FF1700;
     background-image: linear-gradient(to top left,
                                       rgba(0, 0, 0, .2),
                                       rgba(0, 0, 0, .2) 30%,
