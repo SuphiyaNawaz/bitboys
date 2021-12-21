@@ -8,10 +8,15 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route("/Coin Details",methods=["post"])
+@app.route("/Current_Details")
+def Current_Details():
+    return render_template('newIndex.html')
+
+@app.route("/receive_data",methods=["post"])
 def receive_data():
     coin=request.form["coin"]
-    return render_template('newIndex.html', coin= coin)
+    return render_template('finalIndex.html', coin= coin)
+
 
 
 
