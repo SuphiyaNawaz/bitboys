@@ -31,9 +31,9 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route("/Current_Details")
+@app.route("/current_details")
 def Current_Details():
-    return render_template('newIndex.html')
+    return render_template('newindex.html')
 
 @app.route("/receive_data",methods=["post"])
 def receive_data():
@@ -444,7 +444,7 @@ def receive_data():
         final_price="Guess there is no such coin! Instead try with symbol of coin"
         symbol="##"
         img="static/Error.jpg"
-    return render_template('finalIndex.html', coin= coin, price=final_price,symbol=symbol,img_src=img)
+    return render_template('finalindex.html', coin= coin.upper(), price=final_price,symbol=symbol,img_src=img)
 
 
 if __name__ == '__main__':
