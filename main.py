@@ -306,7 +306,7 @@ def receive_data():
         driver.close()
     elif coin_small == "mint club" or coin_small == "mintclub" or coin_small == "mint":
         symbol = "MINT"
-        img = "static/Mint CLub.png"
+        img = "static/MintCLub.png"
         driver.get("https://coinmarketcap.com/currencies/mnt-club/")
         price = driver.find_element_by_xpath(
             '//*[@id="__next"]/div/div/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
@@ -314,7 +314,7 @@ def receive_data():
         driver.close()
     elif coin_small == "nervos network" or coin_small == "ckb" or coin_small == "nervosnetwork":
         symbol = "CKB"
-        img = "static/Nervos Network.jpg"
+        img = "static/NervosNetwork.jpg"
         driver.get("https://coinmarketcap.com/currencies//")
         price = driver.find_element_by_xpath(
             '//*[@id="__next"]/div/div/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
@@ -354,7 +354,7 @@ def receive_data():
         driver.close()
     elif coin_small == "polkacity" or coin_small == "polka city" or coin_small == "polc":
         symbol = "POLC"
-        img = "static/Polka City.png"
+        img = "static/PolkaCity.png"
         driver.get("https://coinmarketcap.com/currencies/polkacity/")
         price = driver.find_element_by_xpath(
             '//*[@id="__next"]/div/div/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
@@ -370,7 +370,7 @@ def receive_data():
         driver.close()
     elif coin_small == "star atlas" or coin_small == "staratlas" or coin_small == "atlas":
         symbol = "ATLAS"
-        img = "static/Star Atlas.png"
+        img = "static/StarAtlas.png"
         driver.get("https://coinmarketcap.com/currencies/star-atlas/")
         price = driver.find_element_by_xpath(
             '//*[@id="__next"]/div/div/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
@@ -426,7 +426,7 @@ def receive_data():
         driver.close()
     elif coin_small == "piccoloinu" or coin_small == "pinu" or coin_small == "piccolo inu":
         symbol = "PINU"
-        img = "static/Piccolo Inu.jpg"
+        img = "static/PiccoloInu.jpg"
         driver.get("https://coinmarketcap.com/currencies/piccolo-inu/")
         price = driver.find_element_by_xpath(
             '//*[@id="__next"]/div/div/div[2]/div/div[1]/div[2]/div/div[2]/div[1]/div/span')
