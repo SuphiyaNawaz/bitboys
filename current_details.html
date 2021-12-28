@@ -3,22 +3,108 @@
 <head>
 	<title>CurrentCryptoCurrency</title>
     <link rel="icon" href="static/favicon_1.ico">
-	<link rel="stylesheet" href="static/styles.css"
+    <link rel="stylesheet" href="static/styles.css">
+	
+    
+        <style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+            
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: center;
+              padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            h1 {text-align:center;}
+            div {text-align:center;}
+            </style>
 </head>
-<body >
-   <div >
+<body>
+        <h1 style = "color:blue;"> BIT BOYS</h1>
 
-      <h1 class="main">Welcome to the WORLD of CRYPTOCURRENCY</h1>
-	  <img class="searchImage" src="static/SearchPage.jpg" alt="Image">
+        <table id="mytbl"> 
+            <tr>
+              <th>Crypto Currency </th>
+              <th>Current Price</th>
+              <th>Current Quantity</th>
+            </tr>
+            <tr>
+              <td><div id="btcusd-crypto"></td>
+              <td><div id="btcusd-price"></div></td>
+                <td><div id="btcusd-quantity"></div></td>
+            </tr>
+            <tr>
+                <td><div id="ethusd-crypto"></td>
+                <td><div id="ethusd-price"></div></td>
+                  <td><div id="ethusd-quantity"></div></td>
+              </tr>
+              <tr>
+                <td><div id="shibusd-crypto"></td>
+                <td><div id="shibusd-price"></div></td>
+                  <td><div id="shibusd-quantity"></div></td>
+              </tr>
+          </table>
 
-	   <form action="receive_data.html" method="POST">
-       <div class= "main3">
-		<label  for="name"> <h2>Search for your Coin:</h2> </label>
-      <input type="text" name="coin" class="search" placeholder="Give coin name/symbol">
-      <input type="submit" name="coin" class="submit" value="Search">
-      </div>
-    </form>
-   </div>
+        
 
-</body>
+        <Script>
+                var btcusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/btcusd@trade");
+                var btcusdcryptoDiv = document.getElementById('btcusd-crypto')
+                var btcusdpriceDiv = document.getElementById('btcusd-price')
+                var btcusdquantityDiv = document.getElementById('btcusd-quantity')
+                btcusdSocket.onmessage = function (event)
+                {
+                    //console.log(event.data);
+                    var btcusdmessageObject = JSON.parse(event.data)
+                    //console.log(price)
+                    //tradeDiv.append(messageObject.p)
+                    //tradeDiv.onreset(price)
+                    //tradeDiv.replaceWith(messageObject.p)
+                    btcusdcryptoDiv.innerHTML = btcusdmessageObject.s + "<br>";
+                    btcusdpriceDiv.innerHTML = btcusdmessageObject.p + "<br>";
+                    btcusdquantityDiv.innerHTML = btcusdmessageObject.q + "<br>";
+                    
+
+                }
+                var ethusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/ethusd@trade");
+                var ethusdcryptoDiv = document.getElementById('ethusd-crypto')
+                var ethusdpriceDiv = document.getElementById('ethusd-price')
+                var ethusdquantityDiv = document.getElementById('ethusd-quantity')
+                ethusdSocket.onmessage = function (event)
+                {
+                    var ethusdmessageObject = JSON.parse(event.data)
+                    ethusdcryptoDiv.innerHTML = ethusdmessageObject.s + "<br>";
+                    ethusdpriceDiv.innerHTML = ethusdmessageObject.p + "<br>";
+                    ethusdquantityDiv.innerHTML = ethusdmessageObject.q + "<br>";
+                    
+
+                }
+                var shibusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/shibusdt@trade");
+                var shibusdcryptoDiv = document.getElementById('shibusd-crypto')
+                var shibusdpriceDiv = document.getElementById('shibusd-price')
+                var shibusdquantityDiv = document.getElementById('shibusd-quantity')
+                shibusdSocket.onmessage = function (event)
+                {
+                    var shibusdmessageObject = JSON.parse(event.data)
+                    shibusdcryptoDiv.innerHTML = shibusdmessageObject.s + "<br>";
+                    shibusdpriceDiv.innerHTML = shibusdmessageObject.p + "<br>";
+                    shibusdquantityDiv.innerHTML = shibusdmessageObject.q + "<br>";
+                    
+
+                }
+
+          
+            
+        </Script>
+    </body>
+
 </html>
+
+	
