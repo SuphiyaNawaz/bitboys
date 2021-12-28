@@ -90,6 +90,30 @@
                 <td><div id="lunausd-price"></div></td>
                   <td><div id="lunausd-quantity"></div></td>
               </tr>
+	      <tr>
+		      <td>Binance</td>
+                <td><div id="bnbusd-crypto"></td>
+                <td><div id="bnbusd-price"></div></td>
+                  <td><div id="bnbusd-quantity"></div></td>
+              </tr>
+	      <tr>
+		      <td>Live Peer</td>
+                <td><div id="lptusd-crypto"></td>
+                <td><div id="lptusd-price"></div></td>
+                  <td><div id="lptusd-quantity"></div></td>
+              </tr>
+	       <tr>
+		      <td>Enjin Coin</td>
+                <td><div id="enjusd-crypto"></td>
+                <td><div id="enjusd-price"></div></td>
+                  <td><div id="enjusd-quantity"></div></td>
+              </tr>
+	      <tr>
+		      <td>Fhantom</td>
+                <td><div id="ftmusd-crypto"></td>
+                <td><div id="ftmusd-price"></div></td>
+                  <td><div id="ftmusd-quantity"></div></td>
+              </tr>
           </table>
 
         
@@ -199,6 +223,50 @@
                     lunausdcryptoDiv.innerHTML = lunausdmessageObject.s + "<br>";
                     lunausdpriceDiv.innerHTML = lunausdmessageObject.p + "<br>";
                     lunausdquantityDiv.innerHTML = lunausdmessageObject.q + "<br>";
+                }
+		var bnbusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/bnbusdt@trade");
+                var bnbusdcryptoDiv = document.getElementById('bnbusd-crypto')
+                var bnbusdpriceDiv = document.getElementById('bnbusd-price')
+                var bnbusdquantityDiv = document.getElementById('bnbusd-quantity')
+                bnbusdSocket.onmessage = function (event)
+                {
+                    var bnbusdmessageObject = JSON.parse(event.data)
+                    bnbusdcryptoDiv.innerHTML = bnbusdmessageObject.s + "<br>";
+                    bnbusdpriceDiv.innerHTML = bnbusdmessageObject.p + "<br>";
+                    bnbusdquantityDiv.innerHTML = bnbusdmessageObject.q + "<br>";
+                }
+		var lptusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/lptusdt@trade");
+                var lptusdcryptoDiv = document.getElementById('lptusd-crypto')
+                var lptusdpriceDiv = document.getElementById('lptusd-price')
+                var lptusdquantityDiv = document.getElementById('lptusd-quantity')
+                lptusdSocket.onmessage = function (event)
+                {
+                    var lptusdmessageObject = JSON.parse(event.data)
+                    lptusdcryptoDiv.innerHTML = lptusdmessageObject.s + "<br>";
+                    lptusdpriceDiv.innerHTML = lptusdmessageObject.p + "<br>";
+                    lptusdquantityDiv.innerHTML = lptusdmessageObject.q + "<br>";
+                }
+		var enjusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/enjusdt@trade");
+                var enjusdcryptoDiv = document.getElementById('enjusd-crypto')
+                var enjusdpriceDiv = document.getElementById('enjusd-price')
+                var enjusdquantityDiv = document.getElementById('enjusd-quantity')
+                enjusdSocket.onmessage = function (event)
+                {
+                    var enjusdmessageObject = JSON.parse(event.data)
+                    enjusdcryptoDiv.innerHTML = enjusdmessageObject.s + "<br>";
+                    enjusdpriceDiv.innerHTML = enjusdmessageObject.p + "<br>";
+                    enjusdquantityDiv.innerHTML = enjusdmessageObject.q + "<br>";
+                }
+		var ftmusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/ftmusdt@trade");
+                var ftmusdcryptoDiv = document.getElementById('ftmusd-crypto')
+                var ftmusdpriceDiv = document.getElementById('ftmusd-price')
+                var ftmusdquantityDiv = document.getElementById('ftmusd-quantity')
+                ftmusdSocket.onmessage = function (event)
+                {
+                    var ftmusdmessageObject = JSON.parse(event.data)
+                    ftmusdcryptoDiv.innerHTML = ftmusdmessageObject.s + "<br>";
+                    ftmusdpriceDiv.innerHTML = ftmusdmessageObject.p + "<br>";
+                    ftmusdquantityDiv.innerHTML = ftmusdmessageObject.q + "<br>";
                 }
 
           
