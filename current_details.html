@@ -27,7 +27,7 @@
             </style>
 </head>
 <body>
-        <h1 style = "color:blue;"> CurrentDetails</h1>
+        <h1 style = "color:blue;"> Current Details</h1>
 
         <table id="mytbl"> 
             <tr>
@@ -102,7 +102,7 @@
                     
 
                 }
-		var solusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/solusd@trade");
+		var solusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/solusdt@trade");
                 var solusdcryptoDiv = document.getElementById('solusd-crypto')
                 var solusdpriceDiv = document.getElementById('solusd-price')
                 var solusdquantityDiv = document.getElementById('solusd-quantity')
@@ -115,7 +115,7 @@
                     
 
                 }
-		var axsusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/axsusd@trade");
+		var axsusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/axsusdt@trade");
                 var axsusdcryptoDiv = document.getElementById('axsusd-crypto')
                 var axsusdpriceDiv = document.getElementById('axsusd-price')
                 var axsusdquantityDiv = document.getElementById('axsusd-quantity')
