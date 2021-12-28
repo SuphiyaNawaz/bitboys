@@ -27,7 +27,7 @@
             </style>
 </head>
 <body>
-        <h1 style = "color:blue;"> BIT BOYS</h1>
+        <h1 style = "color:blue;"> Current Details</h1>
 
         <table id="mytbl"> 
             <tr>
@@ -50,6 +50,11 @@
                 <td><div id="shibusd-price"></div></td>
                   <td><div id="shibusd-quantity"></div></td>
               </tr>
+	      <tr>
+                <td><div id="solusd-crypto"></td>
+                <td><div id="solusd-price"></div></td>
+                  <td><div id="solusd-quantity"></div></td>
+              </tr>
           </table>
 
         
@@ -61,17 +66,10 @@
                 var btcusdquantityDiv = document.getElementById('btcusd-quantity')
                 btcusdSocket.onmessage = function (event)
                 {
-                    //console.log(event.data);
                     var btcusdmessageObject = JSON.parse(event.data)
-                    //console.log(price)
-                    //tradeDiv.append(messageObject.p)
-                    //tradeDiv.onreset(price)
-                    //tradeDiv.replaceWith(messageObject.p)
                     btcusdcryptoDiv.innerHTML = btcusdmessageObject.s + "<br>";
                     btcusdpriceDiv.innerHTML = btcusdmessageObject.p + "<br>";
                     btcusdquantityDiv.innerHTML = btcusdmessageObject.q + "<br>";
-                    
-
                 }
                 var ethusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/ethusd@trade");
                 var ethusdcryptoDiv = document.getElementById('ethusd-crypto')
@@ -96,6 +94,19 @@
                     shibusdcryptoDiv.innerHTML = shibusdmessageObject.s + "<br>";
                     shibusdpriceDiv.innerHTML = shibusdmessageObject.p + "<br>";
                     shibusdquantityDiv.innerHTML = shibusdmessageObject.q + "<br>";
+                    
+
+                }
+		var solusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/solusdt@trade");
+                var solusdcryptoDiv = document.getElementById('solusd-crypto')
+                var solusdpriceDiv = document.getElementById('solusd-price')
+                var solusdquantityDiv = document.getElementById('solusd-quantity')
+                solusdSocket.onmessage = function (event)
+                {
+                    var solusdmessageObject = JSON.parse(event.data)
+                    solusdcryptoDiv.innerHTML = solusdmessageObject.s + "<br>";
+                    solbusdpriceDiv.innerHTML = solusdmessageObject.p + "<br>";
+                    solusdquantityDiv.innerHTML = solusdmessageObject.q + "<br>";
                     
 
                 }
