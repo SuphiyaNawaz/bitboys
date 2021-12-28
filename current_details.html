@@ -55,6 +55,11 @@
                 <td><div id="solusd-price"></div></td>
                   <td><div id="solusd-quantity"></div></td>
               </tr>
+	      <tr>
+                <td><div id="axsusd-crypto"></td>
+                <td><div id="axsusd-price"></div></td>
+                  <td><div id="axsusd-quantity"></div></td>
+              </tr>
           </table>
 
         
@@ -107,6 +112,19 @@
                     solusdcryptoDiv.innerHTML = solusdmessageObject.s + "<br>";
                     solbusdpriceDiv.innerHTML = solusdmessageObject.p + "<br>";
                     solusdquantityDiv.innerHTML = solusdmessageObject.q + "<br>";
+                    
+
+                }
+		var axsusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/axsusd@trade");
+                var axsusdcryptoDiv = document.getElementById('axsusd-crypto')
+                var axsusdpriceDiv = document.getElementById('axsusd-price')
+                var axsusdquantityDiv = document.getElementById('axsusd-quantity')
+                axsusdSocket.onmessage = function (event)
+                {
+                    var axsusdmessageObject = JSON.parse(event.data)
+                    axsusdcryptoDiv.innerHTML = axsusdmessageObject.s + "<br>";
+                    axsbusdpriceDiv.innerHTML = axsusdmessageObject.p + "<br>";
+                    axsusdquantityDiv.innerHTML = axsusdmessageObject.q + "<br>";
                     
 
                 }
