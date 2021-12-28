@@ -76,7 +76,7 @@
                     btcusdpriceDiv.innerHTML = btcusdmessageObject.p + "<br>";
                     btcusdquantityDiv.innerHTML = btcusdmessageObject.q + "<br>";
                 }
-                var ethusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/ethusdt@trade");
+                var ethusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/ethusd@trade");
                 var ethusdcryptoDiv = document.getElementById('ethusd-crypto')
                 var ethusdpriceDiv = document.getElementById('ethusd-price')
                 var ethusdquantityDiv = document.getElementById('ethusd-quantity')
