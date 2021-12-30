@@ -306,6 +306,26 @@
                 <td><div id="bchusd-price"></div></td>
                   <td><div id="bchusd-quantity"></div></td>
               </tr>
+		<tr>
+		      <td>Beam</td>
+                <td><div id="beamusd-crypto"></td>
+                <td><div id="beamusd-price"></div></td>
+                  <td><div id="beamusd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Bancor</td>
+                <td><div id="bntusd-crypto"></td>
+                <td><div id="bntusd-price"></div></td>
+                  <td><div id="bntusd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Chiliz</td>
+                <td><div id="chzusd-crypto"></td>
+                <td><div id="chzusd-price"></div></td>
+                  <td><div id="chzusd-quantity"></div></td>
+              </tr>
+		
+		
 		
 		
           </table>
@@ -790,7 +810,7 @@
                     badgerusdpriceDiv.innerHTML = badgerusdmessageObject.p + "<br>";
                     badgerusdquantityDiv.innerHTML = badgerusdmessageObject.q + "<br>";
                 }
-		var bchusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/bchusdt@trade");
+		var bchusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/bchusd@trade");
                 var bchusdcryptoDiv = document.getElementById('bchusd-crypto')
                 var bchusdpriceDiv = document.getElementById('bchusd-price')
                 var bchusdquantityDiv = document.getElementById('bchusd-quantity')
@@ -800,6 +820,39 @@
                     bchusdcryptoDiv.innerHTML = bchusdmessageObject.s + "<br>";
                     bchusdpriceDiv.innerHTML = bchusdmessageObject.p + "<br>";
                     bchusdquantityDiv.innerHTML = bchusdmessageObject.q + "<br>";
+                }
+		var beamusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/beamusdt@trade");
+                var beamusdcryptoDiv = document.getElementById('beamusd-crypto')
+                var beamsdpriceDiv = document.getElementById('beamusd-price')
+                var beamusdquantityDiv = document.getElementById('beamusd-quantity')
+                beamusdSocket.onmessage = function (event)
+                {
+                    var beamusdmessageObject = JSON.parse(event.data)
+                    beamusdcryptoDiv.innerHTML = beamusdmessageObject.s + "<br>";
+                    beamusdpriceDiv.innerHTML = beamusdmessageObject.p + "<br>";
+                    beamusdquantityDiv.innerHTML = beamusdmessageObject.q + "<br>";
+                }
+		var bntusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/bntusdt@trade");
+                var bntusdcryptoDiv = document.getElementById('bntusd-crypto')
+                var bntusdpriceDiv = document.getElementById('bntusd-price')
+                var bntusdquantityDiv = document.getElementById('bntusd-quantity')
+                bntusdSocket.onmessage = function (event)
+                {
+                    var bntusdmessageObject = JSON.parse(event.data)
+                    bntusdcryptoDiv.innerHTML = bntusdmessageObject.s + "<br>";
+                    bntusdpriceDiv.innerHTML = bntusdmessageObject.p + "<br>";
+                    bntusdquantityDiv.innerHTML = bntusdmessageObject.q + "<br>";
+                }
+		var chzusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/chzusdt@trade");
+                var chzusdcryptoDiv = document.getElementById('chzusd-crypto')
+                var chzusdpriceDiv = document.getElementById('chzusd-price')
+                var chzusdquantityDiv = document.getElementById('chzusd-quantity')
+                chzusdSocket.onmessage = function (event)
+                {
+                    var chzusdmessageObject = JSON.parse(event.data)
+                    chzusdcryptoDiv.innerHTML = chzusdmessageObject.s + "<br>";
+                    chzusdpriceDiv.innerHTML = chzusdmessageObject.p + "<br>";
+                    chzusdquantityDiv.innerHTML = chzusdmessageObject.q + "<br>";
                 }
             
         </Script>
