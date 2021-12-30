@@ -139,6 +139,9 @@
                 <td><div id="algousd-price"></div></td>
                   <td><div id="algousd-quantity"></div></td>
               </tr>
+		
+		
+<!-- 		################## -->
 	      <tr>
 		      <td>Iotex</td>
                 <td><div id="iotxusd-crypto"></td>
@@ -260,6 +263,21 @@
                 <td><div id="pyrusd-price"></div></td>
                   <td><div id="pyrusd-quantity"></div></td>
               </tr>
+<!-- 		###################### -->
+		 <tr>
+		      <td>Aave</td>
+                <td><div id="aaveusd-crypto"></td>
+                <td><div id="aaveusd-price"></div></td>
+                  <td><div id="aaveusd-quantity"></div></td>
+              </tr>
+		 <tr>
+		      <td>AC Milan Fan Token</td>
+                <td><div id="acmusd-crypto"></td>
+                <td><div id="acmusd-price"></div></td>
+                  <td><div id="acmusd-quantity"></div></td>
+              </tr>
+		
+		
           </table>
 
         
@@ -675,6 +693,28 @@
                     pyrusdcryptoDiv.innerHTML = pyrusdmessageObject.s + "<br>";
                     pyrusdpriceDiv.innerHTML = pyrusdmessageObject.p + "<br>";
                     pyrusdquantityDiv.innerHTML = pyrusdmessageObject.q + "<br>";
+                }
+		var aaveusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/aaveusdt@trade");
+                var aaveusdcryptoDiv = document.getElementById('aaveusd-crypto')
+                var aaveusdpriceDiv = document.getElementById('aaveusd-price')
+                var aaveusdquantityDiv = document.getElementById('aaveusd-quantity')
+                aaveusdSocket.onmessage = function (event)
+                {
+                    var aaveusdmessageObject = JSON.parse(event.data)
+                    aaveusdcryptoDiv.innerHTML = aaveusdmessageObject.s + "<br>";
+                    aaveusdpriceDiv.innerHTML = aaveusdmessageObject.p + "<br>";
+                    aaveusdquantityDiv.innerHTML = aaveusdmessageObject.q + "<br>";
+                }
+		var acmusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/acmusdt@trade");
+                var acmusdcryptoDiv = document.getElementById('acmusd-crypto')
+                var acmusdpriceDiv = document.getElementById('acmusd-price')
+                var acmusdquantityDiv = document.getElementById('acmusd-quantity')
+                acmusdSocket.onmessage = function (event)
+                {
+                    var acmusdmessageObject = JSON.parse(event.data)
+                    acmusdcryptoDiv.innerHTML = acmusdmessageObject.s + "<br>";
+                    acmusdpriceDiv.innerHTML = acmusdmessageObject.p + "<br>";
+                    acmusdquantityDiv.innerHTML = acmusdmessageObject.q + "<br>";
                 }
             
         </Script>
