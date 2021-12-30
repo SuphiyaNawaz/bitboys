@@ -27,7 +27,7 @@
             </style>
 </head>
 <body>
-        <h1 style = "color:blue;"> CurrentDetails</h1>
+        <h1 style = "color:blue;"> Current Details</h1>
 
         <table id="mytbl"> 
             <tr>
@@ -346,7 +346,7 @@
                     dotusdpriceDiv.innerHTML = dotusdmessageObject.p + "<br>";
                     dotusdquantityDiv.innerHTML = dotusdmessageObject.q + "<br>";
                 }
-		var iotxusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/iotxusd@trade");
+		var iotxusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/iotxbtc@trade");
                 var iotxusdcryptoDiv = document.getElementById('iotxusd-crypto')
                 var iotxusdpriceDiv = document.getElementById('iotxusd-price')
                 var iotxusdquantityDiv = document.getElementById('iotxusd-quantity')
@@ -357,7 +357,7 @@
                     iotxusdpriceDiv.innerHTML = iotxusdmessageObject.p + "<br>";
                     iotxusdquantityDiv.innerHTML = iotxusdmessageObject.q + "<br>";
                 }
-		var lunausdSocket = new WebSocket("wss://stream.binance.us:9443/ws/lunausd@trade");
+		var lunausdSocket = new WebSocket("wss://stream.binance.us:9443/ws/lunabtc@trade");
                 var lunausdcryptoDiv = document.getElementById('lunausd-crypto')
                 var lunausdpriceDiv = document.getElementById('lunausd-price')
                 var lunausdquantityDiv = document.getElementById('lunausd-quantity')
@@ -379,7 +379,7 @@
                     bnbusdpriceDiv.innerHTML = bnbusdmessageObject.p + "<br>";
                     bnbusdquantityDiv.innerHTML = bnbusdmessageObject.q + "<br>";
                 }
-		var lptusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/lptusd@trade");
+		var lptusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/lptbtc@trade");
                 var lptusdcryptoDiv = document.getElementById('lptusd-crypto')
                 var lptusdpriceDiv = document.getElementById('lptusd-price')
                 var lptusdquantityDiv = document.getElementById('lptusd-quantity')
@@ -412,7 +412,7 @@
                     ftmusdpriceDiv.innerHTML = ftmusdmessageObject.p + "<br>";
                     ftmusdquantityDiv.innerHTML = ftmusdmessageObject.q + "<br>";
                 }
-		var cotiusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/cotiusd@trade");
+		var cotiusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/cotibtc@trade");
                 var cotiusdcryptoDiv = document.getElementById('cotiusd-crypto')
                 var cotiusdpriceDiv = document.getElementById('cotiusd-price')
                 var cotiusdquantityDiv = document.getElementById('cotiusd-quantity')
@@ -423,7 +423,7 @@
                     cotiusdpriceDiv.innerHTML = cotiusdmessageObject.p + "<br>";
                     cotiusdquantityDiv.innerHTML = cotiusdmessageObject.q + "<br>";
                 }
-		var sandusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/sandusd@trade");
+		var sandusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/sandbtc@trade");
                 var sandusdcryptoDiv = document.getElementById('sandusd-crypto')
                 var sandusdpriceDiv = document.getElementById('sandusd-price')
                 var sandusdquantityDiv = document.getElementById('sandusd-quantity')
