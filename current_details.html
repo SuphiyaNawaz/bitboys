@@ -346,7 +346,7 @@
                     dotusdpriceDiv.innerHTML = dotusdmessageObject.p + "<br>";
                     dotusdquantityDiv.innerHTML = dotusdmessageObject.q + "<br>";
                 }
-		var iotxusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/iotxusdt@trade");
+		var iotxusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/iotxusd@trade");
                 var iotxusdcryptoDiv = document.getElementById('iotxusd-crypto')
                 var iotxusdpriceDiv = document.getElementById('iotxusd-price')
                 var iotxusdquantityDiv = document.getElementById('iotxusd-quantity')
@@ -357,7 +357,7 @@
                     iotxusdpriceDiv.innerHTML = iotxusdmessageObject.p + "<br>";
                     iotxusdquantityDiv.innerHTML = iotxusdmessageObject.q + "<br>";
                 }
-		var lunausdSocket = new WebSocket("wss://stream.binance.us:9443/ws/lunausdt@trade");
+		var lunausdSocket = new WebSocket("wss://stream.binance.us:9443/ws/lunausd@trade");
                 var lunausdcryptoDiv = document.getElementById('lunausd-crypto')
                 var lunausdpriceDiv = document.getElementById('lunausd-price')
                 var lunausdquantityDiv = document.getElementById('lunausd-quantity')
