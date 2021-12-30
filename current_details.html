@@ -276,6 +276,24 @@
                 <td><div id="acmusd-price"></div></td>
                   <td><div id="acmusd-quantity"></div></td>
               </tr>
+		<tr>
+		      <td>Cardano</td>
+                <td><div id="adausd-crypto"></td>
+                <td><div id="adausd-price"></div></td>
+                  <td><div id="adausd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Akropolis</td>
+                <td><div id="akrousd-crypto"></td>
+                <td><div id="akrousd-price"></div></td>
+                  <td><div id="akrousd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Cosmos</td>
+                <td><div id="atomusd-crypto"></td>
+                <td><div id="atomusd-price"></div></td>
+                  <td><div id="atomusd-quantity"></div></td>
+              </tr>
 		
 		
           </table>
@@ -715,6 +733,39 @@
                     acmusdcryptoDiv.innerHTML = acmusdmessageObject.s + "<br>";
                     acmusdpriceDiv.innerHTML = acmusdmessageObject.p + "<br>";
                     acmusdquantityDiv.innerHTML = acmusdmessageObject.q + "<br>";
+                }
+		var adausdSocket = new WebSocket("wss://stream.binance.us:9443/ws/adausdt@trade");
+                var adausdcryptoDiv = document.getElementById('adausd-crypto')
+                var adausdpriceDiv = document.getElementById('adausd-price')
+                var adausdquantityDiv = document.getElementById('adausd-quantity')
+                adausdSocket.onmessage = function (event)
+                {
+                    var adausdmessageObject = JSON.parse(event.data)
+                    adausdcryptoDiv.innerHTML = adausdmessageObject.s + "<br>";
+                    adausdpriceDiv.innerHTML = adausdmessageObject.p + "<br>";
+                    adausdquantityDiv.innerHTML = adausdmessageObject.q + "<br>";
+                }
+		var akrousdSocket = new WebSocket("wss://stream.binance.us:9443/ws/akrousdt@trade");
+                var akrousdcryptoDiv = document.getElementById('akrousd-crypto')
+                var akrousdpriceDiv = document.getElementById('akrousd-price')
+                var akrousdquantityDiv = document.getElementById('akrousd-quantity')
+                akrousdSocket.onmessage = function (event)
+                {
+                    var akrousdmessageObject = JSON.parse(event.data)
+                    akrousdcryptoDiv.innerHTML = akrousdmessageObject.s + "<br>";
+                    akrousdpriceDiv.innerHTML = akrousdmessageObject.p + "<br>";
+                    akrousdquantityDiv.innerHTML = akrousdmessageObject.q + "<br>";
+                }
+		var atomusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/atomusdt@trade");
+                var atomusdcryptoDiv = document.getElementById('atomusd-crypto')
+                var atomusdpriceDiv = document.getElementById('atomusd-price')
+                var atomusdquantityDiv = document.getElementById('atomusd-quantity')
+                atomusdSocket.onmessage = function (event)
+                {
+                    var atomusdmessageObject = JSON.parse(event.data)
+                    atomusdcryptoDiv.innerHTML = atomusdmessageObject.s + "<br>";
+                    atomusdpriceDiv.innerHTML = atomusdmessageObject.p + "<br>";
+                    atomusdquantityDiv.innerHTML = atomusdmessageObject.q + "<br>";
                 }
             
         </Script>
