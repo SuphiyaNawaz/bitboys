@@ -366,6 +366,36 @@
                 <td><div id="eurusd-price"></div></td>
                   <td><div id="eurusd-quantity"></div></td>
               </tr>
+		<tr>
+		      <td>FileCoin</td>
+                <td><div id="filusd-crypto"></td>
+                <td><div id="filusd-price"></div></td>
+                  <td><div id="filusd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Dash</td>
+                <td><div id="dashusd-crypto"></td>
+                <td><div id="dashusd-price"></div></td>
+                  <td><div id="dashusd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Streamr DATAcoin</td>
+                <td><div id="datausd-crypto"></td>
+                <td><div id="datausd-price"></div></td>
+                  <td><div id="datausd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Dusk Network</td>
+                <td><div id="duskusd-crypto"></td>
+                <td><div id="duskusd-price"></div></td>
+                  <td><div id="duskusd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Firo</td>
+                <td><div id="firousd-crypto"></td>
+                <td><div id="firousd-price"></div></td>
+                  <td><div id="firousd-quantity"></div></td>
+              </tr>
 		
 		
 		
@@ -985,6 +1015,50 @@
                     filusdcryptoDiv.innerHTML = filusdmessageObject.s + "<br>";
                     filusdpriceDiv.innerHTML = filusdmessageObject.p + "<br>";
                     filusdquantityDiv.innerHTML = filusdmessageObject.q + "<br>";
+                }
+		var dashusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/dashusdt@trade");
+                var dashusdcryptoDiv = document.getElementById('dashusd-crypto')
+                var dashusdpriceDiv = document.getElementById('dashusd-price')
+                var dashusdquantityDiv = document.getElementById('dashusd-quantity')
+                dashusdSocket.onmessage = function (event)
+                {
+                    var dashusdmessageObject = JSON.parse(event.data)
+                    dashusdcryptoDiv.innerHTML = dashusdmessageObject.s + "<br>";
+                    dashusdpriceDiv.innerHTML = dashusdmessageObject.p + "<br>";
+                    dashusdquantityDiv.innerHTML = dashusdmessageObject.q + "<br>";
+                }
+		var datausdSocket = new WebSocket("wss://stream.binance.us:9443/ws/datausdt@trade");
+                var datausdcryptoDiv = document.getElementById('datausd-crypto')
+                var datausdpriceDiv = document.getElementById('datausd-price')
+                var datausdquantityDiv = document.getElementById('datausd-quantity')
+                datausdSocket.onmessage = function (event)
+                {
+                    var datausdmessageObject = JSON.parse(event.data)
+                    datausdcryptoDiv.innerHTML = datausdmessageObject.s + "<br>";
+                    datausdpriceDiv.innerHTML = datausdmessageObject.p + "<br>";
+                    datausdquantityDiv.innerHTML = datausdmessageObject.q + "<br>";
+                }
+		var duskusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/duskusdt@trade");
+                var duskusdcryptoDiv = document.getElementById('duskusd-crypto')
+                var duskusdpriceDiv = document.getElementById('duskusd-price')
+                var duskusdquantityDiv = document.getElementById('duskusd-quantity')
+                duskusdSocket.onmessage = function (event)
+                {
+                    var duskusdmessageObject = JSON.parse(event.data)
+                    duskusdcryptoDiv.innerHTML = duskusdmessageObject.s + "<br>";
+                    duskusdpriceDiv.innerHTML = duskusdmessageObject.p + "<br>";
+                    duskusdquantityDiv.innerHTML = duskusdmessageObject.q + "<br>";
+                }
+		var firousdSocket = new WebSocket("wss://stream.binance.us:9443/ws/firousdt@trade");
+                var firousdcryptoDiv = document.getElementById('firousd-crypto')
+                var firousdpriceDiv = document.getElementById('firousd-price')
+                var firousdquantityDiv = document.getElementById('firousd-quantity')
+                firousdSocket.onmessage = function (event)
+                {
+                    var firousdmessageObject = JSON.parse(event.data)
+                    firousdcryptoDiv.innerHTML = firousdmessageObject.s + "<br>";
+                    firousdpriceDiv.innerHTML = firousdmessageObject.p + "<br>";
+                    firousdquantityDiv.innerHTML = firousdmessageObject.q + "<br>";
                 }
             
         </Script>
