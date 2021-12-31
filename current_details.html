@@ -468,6 +468,26 @@
                 <td><div id="iotausd-price"></div></td>
                   <td><div id="iotausd-quantity"></div></td>
               </tr>
+		<tr>
+		      <td>Kava</td>
+                <td><div id="kavausd-crypto"></td>
+                <td><div id="kavausd-price"></div></td>
+                  <td><div id="kavausd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Keep Network</td>
+                <td><div id="keepusd-crypto"></td>
+                <td><div id="keepusd-price"></div></td>
+                  <td><div id="keepusd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Selfkey</td>
+                <td><div id="keyusd-crypto"></td>
+                <td><div id="keyusd-price"></div></td>
+                  <td><div id="keyusd-quantity"></div></td>
+              </tr>
+		
+		
 		
 		
 		
@@ -1265,6 +1285,39 @@
                     iotausdcryptoDiv.innerHTML = iotausdmessageObject.s + "<br>";
                     iotausdpriceDiv.innerHTML = iotausdmessageObject.p + "<br>";
                     iotausdquantityDiv.innerHTML = iotausdmessageObject.q + "<br>";
+                }
+		var kavausdSocket = new WebSocket("wss://stream.binance.us:9443/ws/kavausd@trade");
+                var kavausdcryptoDiv = document.getElementById('kavausd-crypto')
+                var kavausdpriceDiv = document.getElementById('kavausd-price')
+                var kavausdquantityDiv = document.getElementById('kavausd-quantity')
+                kavausdSocket.onmessage = function (event)
+                {
+                    var kavausdmessageObject = JSON.parse(event.data)
+                    kavausdcryptoDiv.innerHTML = kavausdmessageObject.s + "<br>";
+                    kavausdpriceDiv.innerHTML = kavausdmessageObject.p + "<br>";
+                    kavausdquantityDiv.innerHTML = kavausdmessageObject.q + "<br>";
+                }
+		var keepusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/keepusd@trade");
+                var keepusdcryptoDiv = document.getElementById('keepusd-crypto')
+                var keepusdpriceDiv = document.getElementById('keepusd-price')
+                var keepusdquantityDiv = document.getElementById('keepusd-quantity')
+                keepusdSocket.onmessage = function (event)
+                {
+                    var keepusdmessageObject = JSON.parse(event.data)
+                    keepusdcryptoDiv.innerHTML = keepusdmessageObject.s + "<br>";
+                    keepusdpriceDiv.innerHTML = keepusdmessageObject.p + "<br>";
+                    keepusdquantityDiv.innerHTML = keepusdmessageObject.q + "<br>";
+                }
+		var keyusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/keyusd@trade");
+                var keyusdcryptoDiv = document.getElementById('keyusd-crypto')
+                var keyusdpriceDiv = document.getElementById('keyusd-price')
+                var keyusdquantityDiv = document.getElementById('keyusd-quantity')
+                keyusdSocket.onmessage = function (event)
+                {
+                    var keyusdmessageObject = JSON.parse(event.data)
+                    keyusdcryptoDiv.innerHTML = keyusdmessageObject.s + "<br>";
+                    keyusdpriceDiv.innerHTML = keyusdmessageObject.p + "<br>";
+                    keyusdquantityDiv.innerHTML = keyusdmessageObject.q + "<br>";
                 }
 		
 		
