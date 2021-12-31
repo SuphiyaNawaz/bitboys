@@ -486,6 +486,36 @@
                 <td><div id="keyusd-price"></div></td>
                   <td><div id="keyusd-quantity"></div></td>
               </tr>
+		<tr>
+		      <td>Klaytn</td>
+                <td><div id="klayusd-crypto"></td>
+                <td><div id="klayusd-price"></div></td>
+                  <td><div id="klayusd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Komodo</td>
+                <td><div id="kmdusd-crypto"></td>
+                <td><div id="kmdusd-price"></div></td>
+                  <td><div id="kmdusd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Linear</td>
+                <td><div id="linausd-crypto"></td>
+                <td><div id="linausd-price"></div></td>
+                  <td><div id="linausd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Litentry</td>
+                <td><div id="litusd-crypto"></td>
+                <td><div id="litusd-price"></div></td>
+                  <td><div id="litusd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Polygon</td>
+                <td><div id="maticusd-crypto"></td>
+                <td><div id="maticusd-price"></div></td>
+                  <td><div id="maticusd-quantity"></div></td>
+              </tr>
 		
 		
 		
@@ -1318,6 +1348,50 @@
                     keyusdcryptoDiv.innerHTML = keyusdmessageObject.s + "<br>";
                     keyusdpriceDiv.innerHTML = keyusdmessageObject.p + "<br>";
                     keyusdquantityDiv.innerHTML = keyusdmessageObject.q + "<br>";
+                }
+		var klayusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/klayusd@trade");
+                var klayusdcryptoDiv = document.getElementById('klayusd-crypto')
+                var klayusdpriceDiv = document.getElementById('klayusd-price')
+                var klayusdquantityDiv = document.getElementById('klayusd-quantity')
+                klayusdSocket.onmessage = function (event)
+                {
+                    var klayusdmessageObject = JSON.parse(event.data)
+                    klayusdcryptoDiv.innerHTML = klayusdmessageObject.s + "<br>";
+                    klayusdpriceDiv.innerHTML = klayusdmessageObject.p + "<br>";
+                    klayusdquantityDiv.innerHTML = klayusdmessageObject.q + "<br>";
+                }
+		var kmdusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/kmdusd@trade");
+                var kmdusdcryptoDiv = document.getElementById('kmdusd-crypto')
+                var kmdusdpriceDiv = document.getElementById('kmdusd-price')
+                var kmdusdquantityDiv = document.getElementById('kmdusd-quantity')
+                kmdusdSocket.onmessage = function (event)
+                {
+                    var kmdusdmessageObject = JSON.parse(event.data)
+                    kmdusdcryptoDiv.innerHTML = kmdusdmessageObject.s + "<br>";
+                    kmdusdpriceDiv.innerHTML = kmdusdmessageObject.p + "<br>";
+                    kmdusdquantityDiv.innerHTML = kmdusdmessageObject.q + "<br>";
+                }
+		var linausdSocket = new WebSocket("wss://stream.binance.us:9443/ws/linausd@trade");
+                var linausdcryptoDiv = document.getElementById('linausd-crypto')
+                var linausdpriceDiv = document.getElementById('linausd-price')
+                var linausdquantityDiv = document.getElementById('linausd-quantity')
+                linausdSocket.onmessage = function (event)
+                {
+                    var linausdmessageObject = JSON.parse(event.data)
+                    linausdcryptoDiv.innerHTML = linausdmessageObject.s + "<br>";
+                    linausdpriceDiv.innerHTML = linausdmessageObject.p + "<br>";
+                    linausdquantityDiv.innerHTML = linausdmessageObject.q + "<br>";
+                }
+		var maticusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/maticusd@trade");
+                var maticusdcryptoDiv = document.getElementById('maticusd-crypto')
+                var maticusdpriceDiv = document.getElementById('maticusd-price')
+                var maticusdquantityDiv = document.getElementById('maticusd-quantity')
+                maticusdSocket.onmessage = function (event)
+                {
+                    var maticusdmessageObject = JSON.parse(event.data)
+                    maticusdcryptoDiv.innerHTML = maticusdmessageObject.s + "<br>";
+                    maticusdpriceDiv.innerHTML = maticusdmessageObject.p + "<br>";
+                    maticusdquantityDiv.innerHTML = maticusdmessageObject.q + "<br>";
                 }
 		
 		
