@@ -396,6 +396,18 @@
                 <td><div id="firousd-price"></div></td>
                   <td><div id="firousd-quantity"></div></td>
               </tr>
+		<tr>
+		      <td>Stafi</td>
+                <td><div id="fisusd-crypto"></td>
+                <td><div id="fisusd-price"></div></td>
+                  <td><div id="fisusd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Flow</td>
+                <td><div id="flowusd-crypto"></td>
+                <td><div id="flowusd-price"></div></td>
+                  <td><div id="flowusd-quantity"></div></td>
+              </tr>
 		
 		
 		
@@ -608,7 +620,7 @@
                     vetusdpriceDiv.innerHTML = vetusdmessageObject.p + "<br>";
                     vetusdquantityDiv.innerHTML = vetusdmessageObject.q + "<br>";
                 }
-		var iotxusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/iotxusd@trade");
+		var iotxusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/iotxbtc@trade");
                 var iotxusdcryptoDiv = document.getElementById('iotxusd-crypto')
                 var iotxusdpriceDiv = document.getElementById('iotxusd-price')
                 var iotxusdquantityDiv = document.getElementById('iotxusd-quantity')
@@ -1059,6 +1071,28 @@
                     firousdcryptoDiv.innerHTML = firousdmessageObject.s + "<br>";
                     firousdpriceDiv.innerHTML = firousdmessageObject.p + "<br>";
                     firousdquantityDiv.innerHTML = firousdmessageObject.q + "<br>";
+                }
+		var fisusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/fisusdt@trade");
+                var fisusdcryptoDiv = document.getElementById('fisusd-crypto')
+                var fisusdpriceDiv = document.getElementById('fisusd-price')
+                var fisusdquantityDiv = document.getElementById('fisusd-quantity')
+                fisusdSocket.onmessage = function (event)
+                {
+                    var fisusdmessageObject = JSON.parse(event.data)
+                    fisusdcryptoDiv.innerHTML = fisusdmessageObject.s + "<br>";
+                    fisusdpriceDiv.innerHTML = fisusdmessageObject.p + "<br>";
+                    fisusdquantityDiv.innerHTML = fisusdmessageObject.q + "<br>";
+                }
+		var flowusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/flowusdt@trade");
+                var flowusdcryptoDiv = document.getElementById('flowusd-crypto')
+                var flowusdpriceDiv = document.getElementById('flowusd-price')
+                var flowusdquantityDiv = document.getElementById('flowusd-quantity')
+                flowusdSocket.onmessage = function (event)
+                {
+                    var flowusdmessageObject = JSON.parse(event.data)
+                    flowusdcryptoDiv.innerHTML = flowusdmessageObject.s + "<br>";
+                    flowusdpriceDiv.innerHTML = flowusdmessageObject.p + "<br>";
+                    flowusdquantityDiv.innerHTML = flowusdmessageObject.q + "<br>";
                 }
             
         </Script>
