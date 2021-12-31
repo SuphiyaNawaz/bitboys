@@ -456,6 +456,18 @@
                 <td><div id="icxusd-price"></div></td>
                   <td><div id="icxusd-quantity"></div></td>
               </tr>
+		<tr>
+		      <td>Iost</td>
+                <td><div id="iostusd-crypto"></td>
+                <td><div id="iostusd-price"></div></td>
+                  <td><div id="iostusd-quantity"></div></td>
+              </tr>
+		<tr>
+		      <td>Miota</td>
+                <td><div id="iotausd-crypto"></td>
+                <td><div id="iotausd-price"></div></td>
+                  <td><div id="iotausd-quantity"></div></td>
+              </tr>
 		
 		
 		
@@ -1231,6 +1243,28 @@
                     icxusdcryptoDiv.innerHTML = icxusdmessageObject.s + "<br>";
                     icxusdpriceDiv.innerHTML = icxusdmessageObject.p + "<br>";
                     icxusdquantityDiv.innerHTML = icxusdmessageObject.q + "<br>";
+                }
+		var iostusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/iostusd@trade");
+                var iostusdcryptoDiv = document.getElementById('iostusd-crypto')
+                var iostusdpriceDiv = document.getElementById('iostusd-price')
+                var iostusdquantityDiv = document.getElementById('iostusd-quantity')
+                iostusdSocket.onmessage = function (event)
+                {
+                    var iostusdmessageObject = JSON.parse(event.data)
+                    iostusdcryptoDiv.innerHTML = iostusdmessageObject.s + "<br>";
+                    iostusdpriceDiv.innerHTML = iostusdmessageObject.p + "<br>";
+                    iostusdquantityDiv.innerHTML = iostusdmessageObject.q + "<br>";
+                }
+		var iotausdSocket = new WebSocket("wss://stream.binance.us:9443/ws/iotausd@trade");
+                var iotausdcryptoDiv = document.getElementById('iotausd-crypto')
+                var iotausdpriceDiv = document.getElementById('iotausd-price')
+                var iotausdquantityDiv = document.getElementById('iotausd-quantity')
+                iotausdSocket.onmessage = function (event)
+                {
+                    var iotausdmessageObject = JSON.parse(event.data)
+                    iotausdcryptoDiv.innerHTML = iotausdmessageObject.s + "<br>";
+                    iotausdpriceDiv.innerHTML = iotausdmessageObject.p + "<br>";
+                    iotausdquantityDiv.innerHTML = iotausdmessageObject.q + "<br>";
                 }
 		
 		
