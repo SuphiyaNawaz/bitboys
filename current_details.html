@@ -141,13 +141,14 @@
               </tr>
 		
 		
-<!-- 		################## -->
-<!-- 	      <tr>
+<!-- 		################## -->   <tr>
 		      <td>Iotex</td>
-                <td><div id="iotxusd-crypto"></td>
-                <td><div id="iotxusd-price"></div></td>
-                  <td><div id="iotxusd-quantity"></div></td>
+                <td><div id="iotxbtc-crypto"></td>
+                <td><div id="iotxbtc-price"></div></td>
+                  <td><div id="iotxbtc-quantity"></div></td>
               </tr>
+
+<!-- 	   
 	      <tr>
 		      <td>Terra</td>
                 <td><div id="lunausd-crypto"></td>
@@ -732,16 +733,16 @@
                     vetusdpriceDiv.innerHTML = vetusdmessageObject.p + "<br>";
                     vetusdquantityDiv.innerHTML = vetusdmessageObject.q + "<br>";
                 }
-		var iotxusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/iotxbtc@trade");
-                var iotxusdcryptoDiv = document.getElementById('iotxusd-crypto')
-                var iotxusdpriceDiv = document.getElementById('iotxusd-price')
-                var iotxusdquantityDiv = document.getElementById('iotxusd-quantity')
-                iotxusdSocket.onmessage = function (event)
+		var iotxbtcSocket = new WebSocket("wss://stream.binance.us:9443/ws/iotxbtc@trade");
+                var iotxbtccryptoDiv = document.getElementById('iotxbtc-crypto')
+                var iotxbtcpriceDiv = document.getElementById('iotxbtc-price')
+                var iotxbtcquantityDiv = document.getElementById('iotxbtc-quantity')
+                iotxbtcSocket.onmessage = function (event)
                 {
-                    var iotxusdmessageObject = JSON.parse(event.data)
-                    iotxusdcryptoDiv.innerHTML = iotxusdmessageObject.s + "<br>";
-                    iotxusdpriceDiv.innerHTML = iotxusdmessageObject.p + "<br>";
-                    iotxusdquantityDiv.innerHTML = iotxusdmessageObject.q + "<br>";
+                    var iotxbtcmessageObject = JSON.parse(event.data)
+                    iotxbtccryptoDiv.innerHTML = iotxbtcmessageObject.s + "<br>";
+                    iotxbtcpriceDiv.innerHTML = iotxbtcmessageObject.p + "<br>";
+                    iotxbtcquantityDiv.innerHTML = iotxbtcmessageObject.q + "<br>";
                 }
 		var lunausdSocket = new WebSocket("wss://stream.binance.us:9443/ws/lunausd@trade");
                 var lunausdcryptoDiv = document.getElementById('lunausd-crypto')
