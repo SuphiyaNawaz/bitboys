@@ -206,30 +206,7 @@
                 <td><div id="maticusd-price"></div></td>
                   <td><div id="maticusd-quantity"></div></td>
               </tr>
-		<tr>
-		      <td>Mdex</td>
-                <td><div id="mdxusd-crypto"></td>
-                <td><div id="mdxusd-price"></div></td>
-                  <td><div id="mdxusd-quantity"></div></td>
-              </tr>
-		<tr>
-		      <td>Main Frame</td>
-                <td><div id="mftusd-crypto"></td>
-                <td><div id="mftusd-price"></div></td>
-                  <td><div id="mftusd-quantity"></div></td>
-              </tr>
-		<tr>
-		      <td>Mina</td>
-                <td><div id="minausd-crypto"></td>
-                <td><div id="minausd-price"></div></td>
-                  <td><div id="minausd-quantity"></div></td>
-              </tr>
-		<tr>
-		      <td>Mithril</td>
-                <td><div id="mithusd-crypto"></td>
-                <td><div id="mithusd-price"></div></td>
-                  <td><div id="mithusd-quantity"></div></td>
-              </tr>
+		
 		<tr>
 		      <td>Maker</td>
                 <td><div id="mkrusd-crypto"></td>
@@ -1187,7 +1164,7 @@
                     mkrusdpriceDiv.innerHTML = mkrusdmessageObject.p + "<br>";
                     mkrusdquantityDiv.innerHTML = mkrusdmessageObject.q + "<br>";
                 }
-		var mlnusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/mlnusdt@trade");
+		var mlnusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/mlnusd@trade");
                 var mlnusdcryptoDiv = document.getElementById('mlnusd-crypto')
                 var mlnusdpriceDiv = document.getElementById('mlnusd-price')
                 var mlnusdquantityDiv = document.getElementById('mlnusd-quantity')
@@ -1198,7 +1175,7 @@
                     mlnusdpriceDiv.innerHTML = mlnusdmessageObject.p + "<br>";
                     mlnusdquantityDiv.innerHTML = mlnusdmessageObject.q + "<br>";
                 }
-		var mtlusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/mtlusdt@trade");
+		var mtlusdSocket = new WebSocket("wss://stream.binance.us:9443/ws/mtlusd@trade");
                 var mtlusdcryptoDiv = document.getElementById('mtlusd-crypto')
                 var mtlusdpriceDiv = document.getElementById('mtlusd-price')
                 var mtlusdquantityDiv = document.getElementById('mtlusd-quantity')
@@ -1209,7 +1186,7 @@
                     mtlusdpriceDiv.innerHTML = mtlusdmessageObject.p + "<br>";
                     mtlusdquantityDiv.innerHTML = mtlusdmessageObject.q + "<br>";
                 }
-		var nanousdSocket = new WebSocket("wss://stream.binance.us:9443/ws/nanousdt@trade");
+		var nanousdSocket = new WebSocket("wss://stream.binance.us:9443/ws/nanousd@trade");
                 var nanousdcryptoDiv = document.getElementById('nanousd-crypto')
                 var nanousdpriceDiv = document.getElementById('nanousd-price')
                 var nanousdquantityDiv = document.getElementById('nanousd-quantity')
